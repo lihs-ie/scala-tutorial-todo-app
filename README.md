@@ -1,1 +1,0 @@
-# scala-tutorial-todo-app
