@@ -1,0 +1,17 @@
+name: "scala-todo-tutorial-backend"
+
+services:
+  app:
+    container_name: scala-todo-tutorial-backend-app
+    build:
+      context: ../
+      dockerfile: docker/app/Dockerfile
+    volumes:
+      - ../app:/app/app
+      - ../conf:/app/conf
+      - ../project:/app/project
+      - ../build.sbt:/app/build.sbt
+    ports:
+      - "9000:9000"
+    working_dir: /app
+    command: sbt run
